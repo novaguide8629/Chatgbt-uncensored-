@@ -6,7 +6,7 @@ export async function onRequestPost(context) {
 
     if (!apiKey) {
       return Response.json(
-        { error: "Lipsește cheia API OpenRouter." },
+        { error: "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." },
         { status: 500 }
       );
     }
@@ -30,13 +30,14 @@ export async function onRequestPost(context) {
 
     if (!response.ok) {
       return Response.json(
-        { error: data.error?.message || "Eroare la modelul AI." },
+        { error: data.error?.message . },
         { status: response.status }
       );
     }
 
     return Response.json({
-      reply: data.choices?.[0]?.message?.content || "Nu am primit un răspuns."
+      reply: data.choices?.[0]?.message?.content 
+        .
     });
   } catch {
     return Response.json(
